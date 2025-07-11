@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pkl
+*.log
+
+# Virtual env
+env/
+venv/
+.venv/
+
+# SQLite database
+*.sqlite3
+*.db
+
+# VSCode / PyCharm
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# dotenv
+.env
+*.env
+
+# Migrations (если ты используешь alembic или django)
+migrations/
+alembic/
+
+# n8n (если вдруг туда что-то подгрузишь)
+.n8n/
+
+# pytest cache
+.pytest_cache/
+
+# Logs
+logs/
+*.log
