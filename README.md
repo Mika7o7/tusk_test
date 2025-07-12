@@ -47,23 +47,32 @@ SPAMCHECKER_API_KEY=your-API-Layer-token
 
 Убедитесь, что у вас установлен Python 3.10+
 
+кланируем проект
+```
 git clone https://github.com/Mika7o7/tusk_test.git
 cd tusk_test
-
+```
+создаеом и активируем виртуальное окружения
+```
 python -m venv venv
 source venv/bin/activate  # для Linux/macOS
 # venv\Scripts\activate   # для Windows
-
+```
+устанавливаем зависимости, библятеки 
+```
 pip install -r requirements.txt
+```
 
 🟢 Запуск API сервера
 
+```
 python main.py
+```
 
 или через uvicorn:
-
+```
 uvicorn main:app --host 0.0.0.0 --port 8000 --reload
-
+```
 
 После запуска:
 
