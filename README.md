@@ -65,13 +65,9 @@ SPAMCHECKER_API_KEY=your-API-Layer-token
 
 🟢 Запуск API сервера
 
-```
-python main.py
-```
 
-или через uvicorn:
 ```
-uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+python -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
 После запуска:
