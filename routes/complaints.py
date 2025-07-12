@@ -40,30 +40,11 @@ async def create_complaint(complaint: ComplaintCreate, request: Request, db: Ses
         geo=geo_data
     )
 
+
 @router.get("/complaints/open")
-def get_open_complaints(
-    since: str = Query(..., description="Например: 1h, 30m, 2d"),
-    db: Session = Depends(get_db)
-):
-    now = datetime.utcnow()
-
-    value = int(since[:-1])
-    unit = since[-1]
-
-    if unit == "h":
-        delta = timedelta(hours=value)
-    elif unit == "m":
-        delta = timedelta(minutes=value)
-    elif unit == "d":
-        delta = timedelta(days=value)
-    else:
-        raise HTTPException(status_code=400, detail="Неверный формат 'since'")
-
-    cutoff = now - delta
-
+def get_open_complaints(db: Session = Depends(get_db)):
     complaints = db.query(Complaint).filter(
-        Complaint.status == "open",
-        Complaint.timestamp >= cutoff
+        Complaint.status == "open"
     ).all()
 
     return [
